@@ -165,7 +165,7 @@ const products = [
     bgLight: 'bg-primary-50',
     textColor: 'text-primary-600',
     borderColor: 'border-primary-200',
-    image: 'https://images.pexels.com/photos/5632399/pexels-photo-5632399.jpeg?auto=compress&cs=tinysrgb&w=800',
+    image: '/buyoo.jpeg',
   },
   {
     name: 'Qua Business',
@@ -179,7 +179,7 @@ const products = [
     bgLight: 'bg-accent-50',
     textColor: 'text-accent-600',
     borderColor: 'border-accent-200',
-    image: 'https://images.pexels.com/photos/3183150/pexels-photo-3183150.jpeg?auto=compress&cs=tinysrgb&w=800',
+    image: '/Qua_Business.jpeg',
   },
   {
     name: 'Qua Links',
@@ -193,7 +193,7 @@ const products = [
     bgLight: 'bg-navy-50',
     textColor: 'text-navy-600',
     borderColor: 'border-navy-200',
-    image: 'https://images.pexels.com/photos/2577164/pexels-photo-2577164.jpeg?auto=compress&cs=tinysrgb&w=800',
+    image: '/tech_project.jpeg',
   },
 ];
 

@@ -32,7 +32,7 @@ const products = [
       { icon: ShoppingBag, text: 'Access local products and services faster' },
       { icon: Users, text: 'Connect with your community marketplace' },
     ],
-    image: 'public/buyoo.jpeg',
+    image: '/buyoo.jpeg',
   },
   {
     name: 'Qua Business',
@@ -51,7 +51,7 @@ const products = [
       { icon: BarChart3, text: 'Improve business operations digitally' },
       { icon: Users, text: 'Join a thriving entrepreneur ecosystem' },
     ],
-    image: 'public/Qua_Business.jpeg',
+    image: '/Qua_Business.jpeg',
   },
   {
     name: 'Qua Links',
@@ -70,7 +70,7 @@ const products = [
       { icon: Truck, text: 'Connect producers to markets efficiently' },
       { icon: MapPin, text: 'Improve distribution network accessibility' },
     ],
-    image: 'public/tech project.jpeg',
+    image: '/tech_project.jpeg',
   },
   {
     name: 'Qua Media',
@@ -89,7 +89,7 @@ const products = [
       { icon: Film, text: 'Cover entrepreneurial journeys and impact' },
       { icon: Users, text: 'Build brand visibility and community narratives' },
     ],
-    image: 'public/tv project.jpeg',
+    image: '/tv_project.jpeg',
   },
 ];
 
