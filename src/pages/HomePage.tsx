@@ -193,7 +193,7 @@ const products = [
     bgLight: 'bg-navy-50',
     textColor: 'text-navy-600',
     borderColor: 'border-navy-200',
-    image: '/tech_project.jpeg',
+    image: '/Qua_Links.jpeg',
   },
 ];
 
@@ -334,7 +334,7 @@ function ImpactSection() {
             <div className="relative">
               <div className="rounded-2xl overflow-hidden">
                 <img
-                  src="https://images.pexels.com/photos/3184291/pexels-photo-3184291.jpeg?auto=compress&cs=tinysrgb&w=800"
+                  src="qua_people.jpeg"
                   alt="Team collaboration"
                   className="w-full h-80 md:h-96 object-cover"
                 />

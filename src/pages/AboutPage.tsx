@@ -105,7 +105,7 @@ export default function AboutPage() {
             <AnimatedSection animation="slide-in-right" delay={200}>
               <div className="rounded-2xl overflow-hidden shadow-xl">
                 <img
-                  src="https://images.pexels.com/photos/3184291/pexels-photo-3184291.jpeg?auto=compress&cs=tinysrgb&w=800"
+                  src="qua_people.jpeg"
                   alt="Team collaboration"
                   className="w-full h-80 md:h-96 object-cover"
                 />
@@ -123,7 +123,7 @@ export default function AboutPage() {
               <div className="relative">
                 <div className="rounded-2xl overflow-hidden shadow-xl">
                   <img
-                    src="https://images.pexels.com/photos/3183150/pexels-photo-3183150.jpeg?auto=compress&cs=tinysrgb&w=800"
+                    src="qua_people.jpeg"
                     alt="Innovation workspace"
                     className="w-full h-80 md:h-96 object-cover"
                   />

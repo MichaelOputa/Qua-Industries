@@ -70,7 +70,7 @@ const products = [
       { icon: Truck, text: 'Connect producers to markets efficiently' },
       { icon: MapPin, text: 'Improve distribution network accessibility' },
     ],
-    image: '/tech_project.jpeg',
+    image: '/Qua_Links.jpeg',
   },
   {
     name: 'Qua Media',
