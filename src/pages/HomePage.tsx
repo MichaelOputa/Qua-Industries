@@ -12,20 +12,19 @@ import {
   Rocket,
   Lightbulb,
   TrendingUp,
+  ExternalLink,
 } from 'lucide-react';
 import AnimatedSection from '../components/AnimatedSection';
 
 function HeroSection() {
   return (
     <section className="relative gradient-hero min-h-screen flex items-center overflow-hidden">
-      {/* Decorative Elements */}
       <div className="absolute inset-0">
         <div className="absolute top-20 right-10 w-72 h-72 bg-primary-500/10 rounded-full blur-3xl" />
         <div className="absolute bottom-20 left-10 w-96 h-96 bg-accent-500/10 rounded-full blur-3xl" />
         <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[600px] h-[600px] bg-primary-600/5 rounded-full blur-3xl" />
       </div>
 
-      {/* Grid pattern overlay */}
       <div
         className="absolute inset-0 opacity-[0.03]"
         style={{
@@ -66,7 +65,6 @@ function HeroSection() {
             </Link>
           </div>
 
-          {/* Product tags */}
           <div className="mt-12 flex flex-wrap items-center gap-3 animate-fade-in" style={{ animationDelay: '600ms' }}>
             <span className="text-navy-300 text-sm">Our Products:</span>
             {['Buyoo', 'Qua Business', 'Qua Links'].map((name) => (
@@ -82,7 +80,6 @@ function HeroSection() {
         </div>
       </div>
 
-      {/* Bottom gradient fade */}
       <div className="absolute bottom-0 left-0 right-0 h-32 bg-gradient-to-t from-white to-transparent" />
     </section>
   );
@@ -154,20 +151,6 @@ function AboutPreview() {
 
 const products = [
   {
-    name: 'Buyoo',
-    tagline: 'Local Commerce Reimagined',
-    description:
-      'Buyoo is a location-based marketplace connecting consumers with vendors and service providers within their communities.',
-    focusAreas: ['Local marketplace', 'Vendor discovery', 'Service providers', 'Community commerce', 'Digital accessibility'],
-    icon: ShoppingBag,
-    color: 'primary' as const,
-    gradient: 'from-primary-500 to-primary-700',
-    bgLight: 'bg-primary-50',
-    textColor: 'text-primary-600',
-    borderColor: 'border-primary-200',
-    image: '/buyoo.jpeg',
-  },
-  {
     name: 'Qua Business',
     tagline: 'Empowering African Businesses Through Digitalization',
     description:
@@ -180,6 +163,24 @@ const products = [
     textColor: 'text-accent-600',
     borderColor: 'border-accent-200',
     image: '/Qua_Business.jpeg',
+    externalLink: 'https://qua-business.vercel.app/',
+    comingSoon: false,
+  },
+  {
+    name: 'Buyoo',
+    tagline: 'Local Commerce Reimagined',
+    description:
+      'Buyoo is a location-based marketplace connecting consumers with vendors and service providers within their communities.',
+    focusAreas: ['Local marketplace', 'Vendor discovery', 'Service providers', 'Community commerce', 'Digital accessibility'],
+    icon: ShoppingBag,
+    color: 'primary' as const,
+    gradient: 'from-primary-500 to-primary-700',
+    bgLight: 'bg-primary-50',
+    textColor: 'text-primary-600',
+    borderColor: 'border-primary-200',
+    image: '/buyoo.jpeg',
+    externalLink: null,
+    comingSoon: true,
   },
   {
     name: 'Qua Links',
@@ -194,6 +195,8 @@ const products = [
     textColor: 'text-navy-600',
     borderColor: 'border-navy-200',
     image: '/Qua_Links.jpeg',
+    externalLink: null,
+    comingSoon: true,
   },
 ];
 
@@ -239,6 +242,12 @@ function ProductsSection() {
                   <h3 className="heading-display text-2xl md:text-3xl text-navy-900 mb-2">
                     {product.name}
                   </h3>
+                  {product.comingSoon && (
+                    <span className="inline-flex items-center gap-1.5 px-3 py-1 rounded-full text-xs font-semibold bg-amber-50 text-amber-700 border border-amber-200 mb-3">
+                      <span className="w-1.5 h-1.5 rounded-full bg-amber-400" />
+                      Coming Soon
+                    </span>
+                  )}
                   <p className={`text-sm font-semibold ${product.textColor} mb-4`}>
                     {product.tagline}
                   </p>
@@ -260,12 +269,24 @@ function ProductsSection() {
                     </div>
                   </div>
 
-                  <Link
-                    to="/products"
-                    className={`inline-flex items-center gap-2 text-sm font-semibold ${product.textColor} hover:gap-3 transition-all`}
-                  >
-                    Learn More <ArrowRight size={16} />
-                  </Link>
+                  <div className="flex items-center gap-4 flex-wrap">
+                    <Link
+                      to="/products"
+                      className={`inline-flex items-center gap-2 text-sm font-semibold ${product.textColor} hover:gap-3 transition-all`}
+                    >
+                      Learn More <ArrowRight size={16} />
+                    </Link>
+                    {product.externalLink && (
+                      <a
+                        href={product.externalLink}
+                        target="_blank"
+                        rel="noopener noreferrer"
+                        className={`inline-flex items-center gap-2 text-sm font-semibold px-4 py-2 rounded-lg ${product.bgLight} ${product.textColor} hover:opacity-80 transition-all`}
+                      >
+                        Visit Platform <ExternalLink size={14} />
+                      </a>
+                    )}
+                  </div>
                 </div>
 
                 <div className={`relative h-64 lg:h-auto ${index % 2 === 1 ? 'lg:order-1' : ''}`}>
@@ -275,6 +296,23 @@ function ProductsSection() {
                     className="absolute inset-0 w-full h-full object-cover"
                   />
                   <div className={`absolute inset-0 bg-gradient-to-t ${product.gradient} opacity-20`} />
+                  {product.externalLink && (
+                    <a
+                      href={product.externalLink}
+                      target="_blank"
+                      rel="noopener noreferrer"
+                      className="absolute top-4 right-4 flex items-center gap-1.5 px-3 py-1.5 bg-white/90 backdrop-blur-sm rounded-full text-xs font-semibold text-accent-700 hover:bg-white transition-all shadow-md"
+                    >
+                      <span className="w-1.5 h-1.5 rounded-full bg-green-500 animate-pulse" />
+                      Live Platform
+                    </a>
+                  )}
+                  {product.comingSoon && (
+                    <div className="absolute top-4 right-4 flex items-center gap-1.5 px-3 py-1.5 bg-white/90 backdrop-blur-sm rounded-full text-xs font-semibold text-amber-700 shadow-md">
+                      <span className="w-1.5 h-1.5 rounded-full bg-amber-400" />
+                      Coming Soon
+                    </div>
+                  )}
                 </div>
               </div>
             </AnimatedSection>
@@ -317,10 +355,7 @@ function ImpactSection() {
 
             <div className="space-y-4">
               {impactItems.map(({ icon: Icon, text }) => (
-                <div
-                  key={text}
-                  className="flex items-center gap-4 group"
-                >
+                <div key={text} className="flex items-center gap-4 group">
                   <div className="w-10 h-10 rounded-lg bg-primary-600/20 flex items-center justify-center flex-shrink-0 group-hover:bg-primary-600/30 transition-colors">
                     <Icon size={20} className="text-primary-400" />
                   </div>

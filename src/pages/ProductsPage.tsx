@@ -10,30 +10,12 @@ import {
   TrendingUp,
   Package,
   Radio,
+  ExternalLink,
 } from 'lucide-react';
 import AnimatedSection from '../components/AnimatedSection';
 import { useScrollToTop } from '../hooks/useAnimations';
 
 const products = [
-  {
-    name: 'Buyoo',
-    tagline: 'Local Commerce Reimagined',
-    description:
-      'Buyoo is a location-based marketplace connecting consumers with vendors and service providers within their communities. The platform helps users discover nearby businesses, access products and services faster, and promote local economic growth.',
-    focusAreas: ['Local marketplace', 'Vendor discovery', 'Service providers', 'Community commerce', 'Digital accessibility'],
-    icon: ShoppingBag,
-    color: 'primary' as const,
-    gradient: 'from-primary-500 to-primary-700',
-    bgLight: 'bg-primary-50',
-    textColor: 'text-primary-600',
-    bgIcon: 'bg-primary-100',
-    features: [
-      { icon: MapPin, text: 'Discover nearby businesses and vendors' },
-      { icon: ShoppingBag, text: 'Access local products and services faster' },
-      { icon: Users, text: 'Connect with your community marketplace' },
-    ],
-    image: '/buyoo.jpeg',
-  },
   {
     name: 'Qua Business',
     tagline: 'Empowering African Businesses Through Digitalization',
@@ -52,6 +34,29 @@ const products = [
       { icon: Users, text: 'Join a thriving entrepreneur ecosystem' },
     ],
     image: '/Qua_Business.jpeg',
+    externalLink: 'https://qua-business.vercel.app/',
+    comingSoon: false,
+  },
+  {
+    name: 'Buyoo',
+    tagline: 'Local Commerce Reimagined',
+    description:
+      'Buyoo is a location-based marketplace connecting consumers with vendors and service providers within their communities. The platform helps users discover nearby businesses, access products and services faster, and promote local economic growth.',
+    focusAreas: ['Local marketplace', 'Vendor discovery', 'Service providers', 'Community commerce', 'Digital accessibility'],
+    icon: ShoppingBag,
+    color: 'primary' as const,
+    gradient: 'from-primary-500 to-primary-700',
+    bgLight: 'bg-primary-50',
+    textColor: 'text-primary-600',
+    bgIcon: 'bg-primary-100',
+    features: [
+      { icon: MapPin, text: 'Discover nearby businesses and vendors' },
+      { icon: ShoppingBag, text: 'Access local products and services faster' },
+      { icon: Users, text: 'Connect with your community marketplace' },
+    ],
+    image: '/buyoo.jpeg',
+    externalLink: null,
+    comingSoon: true,
   },
   {
     name: 'Qua Links',
@@ -71,25 +76,8 @@ const products = [
       { icon: MapPin, text: 'Improve distribution network accessibility' },
     ],
     image: '/Qua_Links.jpeg',
-  },
-  {
-    name: 'Qua Media',
-    tagline: 'Amplifying African Stories and Innovation',
-    description:
-      'Qua Media is a digital media platform focused on showcasing African innovation, business stories, and entrepreneurial journeys. The platform highlights the people, ideas, and solutions shaping Africa\'s future across commerce, technology, and community development.',
-    focusAreas: ['Digital media', 'Storytelling', 'Innovation coverage', 'Brand visibility', 'Community narratives'],
-    icon: Film,
-    color: 'accent' as const,
-    gradient: 'from-accent-600 to-navy-700',
-    bgLight: 'bg-accent-50',
-    textColor: 'text-accent-600',
-    bgIcon: 'bg-accent-100',
-    features: [
-      { icon: Radio, text: 'Showcase African innovation and stories' },
-      { icon: Film, text: 'Cover entrepreneurial journeys and impact' },
-      { icon: Users, text: 'Build brand visibility and community narratives' },
-    ],
-    image: '/tv_project.jpeg',
+    externalLink: null,
+    comingSoon: true,
   },
 ];
 
@@ -131,7 +119,7 @@ export default function ProductsPage() {
             {products.map((product, index) => (
               <AnimatedSection
                 key={product.name}
-                animation={index % 2 === 0 ? 'fade-in-up' : 'fade-in-up'}
+                animation="fade-in-up"
                 delay={0}
               >
                 <div
@@ -149,6 +137,12 @@ export default function ProductsPage() {
                     <h2 className="heading-display text-3xl md:text-4xl text-navy-900 mb-2">
                       {product.name}
                     </h2>
+                    {product.comingSoon && (
+                      <span className="inline-flex items-center gap-1.5 px-3 py-1 rounded-full text-xs font-semibold bg-amber-50 text-amber-700 border border-amber-200 mb-3">
+                        <span className="w-1.5 h-1.5 rounded-full bg-amber-400" />
+                        Coming Soon
+                      </span>
+                    )}
                     <p className={`text-base font-semibold ${product.textColor} mb-4`}>
                       {product.tagline}
                     </p>
@@ -170,7 +164,7 @@ export default function ProductsPage() {
                       </div>
                     </div>
 
-                    <div className="space-y-3">
+                    <div className="space-y-3 mb-8">
                       {product.features.map(({ icon: FeatureIcon, text }) => (
                         <div key={text} className="flex items-center gap-3">
                           <div className={`w-8 h-8 rounded-lg ${product.bgLight} ${product.textColor} flex items-center justify-center flex-shrink-0`}>
@@ -180,6 +174,18 @@ export default function ProductsPage() {
                         </div>
                       ))}
                     </div>
+
+                    {product.externalLink && (
+                      <a
+                        href={product.externalLink}
+                        target="_blank"
+                        rel="noopener noreferrer"
+                        className={`inline-flex items-center gap-2 px-6 py-3 rounded-xl font-semibold text-sm transition-all duration-200 shadow-sm hover:shadow-md ${product.bgLight} ${product.textColor} border border-current/10 hover:opacity-90`}
+                      >
+                        <ExternalLink size={16} />
+                        Visit Qua Business Platform
+                      </a>
+                    )}
                   </div>
 
                   <div className={`relative ${index % 2 === 1 ? 'lg:order-1' : ''}`}>
@@ -191,6 +197,23 @@ export default function ProductsPage() {
                       />
                       <div className={`absolute inset-0 bg-gradient-to-t ${product.gradient} opacity-20`} />
                     </div>
+                    {product.externalLink && (
+                      <a
+                        href={product.externalLink}
+                        target="_blank"
+                        rel="noopener noreferrer"
+                        className="absolute top-4 right-4 flex items-center gap-1.5 px-3 py-1.5 bg-white/90 backdrop-blur-sm rounded-full text-xs font-semibold text-accent-700 hover:bg-white transition-all shadow-md"
+                      >
+                        <span className="w-1.5 h-1.5 rounded-full bg-green-500 animate-pulse" />
+                        Live Now
+                      </a>
+                    )}
+                    {product.comingSoon && (
+                      <div className="absolute top-4 right-4 flex items-center gap-1.5 px-3 py-1.5 bg-white/90 backdrop-blur-sm rounded-full text-xs font-semibold text-amber-700 shadow-md">
+                        <span className="w-1.5 h-1.5 rounded-full bg-amber-400" />
+                        Coming Soon
+                      </div>
+                    )}
                   </div>
                 </div>
 
