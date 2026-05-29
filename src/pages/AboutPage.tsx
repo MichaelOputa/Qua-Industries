@@ -129,7 +129,7 @@ export default function AboutPage() {
                   />
                 </div>
                 <div className="absolute -bottom-6 -right-6 bg-primary-600 rounded-2xl p-6 shadow-xl">
-                  <div className="text-3xl font-display font-bold text-white">2024</div>
+                  <div className="text-3xl font-display font-bold text-white">2026</div>
                   <div className="text-primary-200 text-sm">Founded</div>
                 </div>
               </div>

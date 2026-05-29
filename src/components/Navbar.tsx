@@ -2,12 +2,15 @@ import { useState, useEffect } from 'react';
 import { Link, useLocation } from 'react-router-dom';
 import { Menu, X } from 'lucide-react';
 
+
 const navLinks = [
   { label: 'Home', path: '/' },
   { label: 'About', path: '/about' },
   { label: 'Products', path: '/products' },
   { label: 'Services', path: '/services' },
   { label: 'Partners', path: '/partners' },
+  { label: 'Founder', path: '/founder' },
+  { label: 'Team', path: '/team' },
   { label: 'Contact', path: '/contact' },
 ];
 
@@ -36,18 +39,13 @@ export default function Navbar() {
           : 'bg-transparent'
       }`}
     >
-      <div className="container-section">
-        <div className="flex items-center justify-between h-16 md:h-20">
-          <Link to="/" className="flex items-center gap-2 group">
-            <div className="w-9 h-9 rounded-lg bg-gradient-to-br from-primary-500 to-primary-700 flex items-center justify-center shadow-sm group-hover:shadow-md transition-shadow">
-              <span className="text-white font-display font-bold text-lg">Q</span>
-            </div>
-            <span className={`font-display font-bold text-xl transition-colors ${scrolled ? 'text-navy-900' : 'text-white'}`}>
-              Qua Industries
-            </span>
-          </Link>
+      <div className="container-section flex items-center justify-between py-3">
+        <Link to="/" className={`flex items-center gap-2 text-lg font-bold transition-colors ${scrolled ? 'text-navy-900' : 'text-white'}`}>
+          <img src="/logo.jpeg" alt="Qua Industries Logo" className="h-8 w-8 object-contain" />
+          Qua Industries
+        </Link>
 
-          <div className="hidden md:flex items-center gap-1">
+        <div className="hidden md:flex items-center gap-1">
             {navLinks.map((link) => (
               <Link
                 key={link.path}
@@ -77,7 +75,7 @@ export default function Navbar() {
             </Link>
           </div>
 
-          <button
+        <button
             onClick={() => setIsOpen(!isOpen)}
             className={`md:hidden p-2 rounded-lg transition-colors ${
               scrolled ? 'text-navy-700 hover:bg-navy-50' : 'text-white hover:bg-white/10'
@@ -86,7 +84,6 @@ export default function Navbar() {
           >
             {isOpen ? <X size={24} /> : <Menu size={24} />}
           </button>
-        </div>
       </div>
 
       {/* Mobile Menu */}
