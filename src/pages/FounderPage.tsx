@@ -23,7 +23,7 @@ export default function FounderPage() {
           <div className="bg-white/98 rounded-2xl shadow-2xl p-10 md:p-16 relative backdrop-blur-sm">
             <Quote className="h-16 w-16 text-blue-200 absolute top-8 left-8 opacity-50" />
 
-            <div className="relative z-10 space-y-6 text-lg text-gray-700 leading-relaxed">
+            <div className="relative z-10 space-y-6 text-lg text-gray-900 font-medium leading-relaxed">
               <p>
                 Hello, I&apos;m <strong className="text-gray-900">Timfon Aqua</strong>. Growing up in Nigeria, I&apos;ve seen firsthand how small challenges can make everyday life harder for ordinary people. I&apos;ve always believed that with vision, determination, and creativity, we can build solutions that truly make a difference.
               </p>
@@ -36,7 +36,7 @@ export default function FounderPage() {
                 Thank you for visiting our site and for believing in this journey. Together, we can turn vision into action and make meaningful change possible.
               </p>
 
-              <p className="text-blue-600 font-semibold italic text-xl pt-4">Designed for impact.</p>
+              <p className="text-blue-700 font-semibold italic text-xl pt-4">Designed for impact.</p>
             </div>
 
             <div className="mt-10 pt-8 border-t border-gray-200">
