@@ -47,9 +47,9 @@ export default function Footer() {
                 <Mail size={16} />
                 info@quaindustries.com
               </a>
-              <a href="tel:+234XXXXXXXXXX" className="flex items-center gap-3 text-navy-300 hover:text-primary-400 transition-colors text-sm">
+              <a href="tel:+2347019791950" className="flex items-center gap-3 text-navy-300 hover:text-primary-400 transition-colors text-sm">
                 <Phone size={16} />
-                +234 XXX XXX XXXX
+                +234 701 979 1950
               </a>
               <div className="flex items-center gap-3 text-navy-300 text-sm">
                 <MapPin size={16} />
