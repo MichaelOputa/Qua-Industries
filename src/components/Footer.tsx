@@ -45,7 +45,7 @@ export default function Footer() {
             <div className="space-y-3">
               <a href="mailto:info@quaindustries.com" className="flex items-center gap-3 text-navy-300 hover:text-primary-400 transition-colors text-sm">
                 <Mail size={16} />
-                info@quaindustries.com
+                info@quaindustrieslimited.com.ng
               </a>
               <a href="tel:+2347019791950" className="flex items-center gap-3 text-navy-300 hover:text-primary-400 transition-colors text-sm">
                 <Phone size={16} />

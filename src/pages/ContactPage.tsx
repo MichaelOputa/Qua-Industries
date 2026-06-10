@@ -14,8 +14,8 @@ const contactInfo = [
   {
     icon: Mail,
     label: 'Email',
-    value: 'info@quaindustries.com',
-    href: 'mailto:info@quaindustries.com',
+    value: 'info@quaindustrieslimited.com.ng',
+    href: 'mailto:info@quaindustrieslimited.com.ng',
   },
   {
     icon: Phone,

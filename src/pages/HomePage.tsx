@@ -372,7 +372,7 @@ function ImpactSection() {
             <div className="relative">
               <div className="rounded-2xl overflow-hidden">
                 <img
-                  src="qua_people.jpeg"
+                  src="qua_person.jpeg"
                   alt="Team collaboration"
                   className="w-full h-80 md:h-96 object-cover"
                 />
