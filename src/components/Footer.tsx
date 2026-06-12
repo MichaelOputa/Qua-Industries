@@ -14,7 +14,7 @@ const footerLinks = {
     { label: 'Buyoo', path: '/products' },
     { label: 'Qua Business', path: '/products' },
     { label: 'Qua Links', path: '/products' },
-    { label: 'Qua Media', path: '/products' },
+    
   ],
   Resources: [
     { label: 'Careers', path: '#' },
@@ -43,7 +43,7 @@ export default function Footer() {
               Building innovation. Creating opportunities. Transforming communities across Africa through technology.
             </p>
             <div className="space-y-3">
-              <a href="mailto:info@quaindustries.com" className="flex items-center gap-3 text-navy-300 hover:text-primary-400 transition-colors text-sm">
+              <a href="mailto:info@quaindustrieslimited.com.ng" className="flex items-center gap-3 text-navy-300 hover:text-primary-400 transition-colors text-sm">
                 <Mail size={16} />
                 info@quaindustrieslimited.com.ng
               </a>
