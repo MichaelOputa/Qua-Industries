@@ -6,7 +6,26 @@ import {
   Send,
   CheckCircle2,
   MessageSquare,
+  Instagram,
+  Facebook,
+  Twitter,
+  Youtube,
+  Linkedin,
 } from 'lucide-react';
+
+function TikTokIcon({ size = 24 }: { size?: number }) {
+  return (
+    <svg
+      width={size}
+      height={size}
+      viewBox="0 0 24 24"
+      fill="currentColor"
+      xmlns="http://www.w3.org/2000/svg"
+    >
+      <path d="M19.59 6.69a4.83 4.83 0 0 1-3.77-4.25V2h-3.45v13.67a2.89 2.89 0 0 1-5.2 1.74 2.89 2.89 0 0 1 2.31-4.64 2.93 2.93 0 0 1 .88.13V9.4a6.84 6.84 0 0 0-1-.05A6.33 6.33 0 0 0 5 20.1a6.34 6.34 0 0 0 10.86-4.43v-7a8.16 8.16 0 0 0 4.77 1.52v-3.4a4.85 4.85 0 0 1-1-.1z" />
+    </svg>
+  );
+}
 import AnimatedSection from '../components/AnimatedSection';
 import { useScrollToTop } from '../hooks/useAnimations';
 
@@ -38,6 +57,15 @@ const inquiryTypes = [
   'Collaboration',
   'Media & Press',
   'General',
+];
+
+const socialLinks = [
+  { icon: Instagram, href: 'https://www.instagram.com/quaindustries?igsh=MjFyYWhoN2pxZ25y', label: 'Instagram' },
+  { icon: Facebook, href: 'https://www.facebook.com/profile.php?id=61590702391931', label: 'Facebook' },
+  { icon: Twitter, href: '', label: 'X (Twitter)' },
+  { icon: Youtube, href: '', label: 'YouTube' },
+  { icon: Linkedin, href: '', label: 'LinkedIn' },
+  { icon: TikTokIcon, href: '', label: 'TikTok' },
 ];
 
 export default function ContactPage() {
@@ -130,9 +158,23 @@ export default function ContactPage() {
 
                 <div className="bg-navy-900 rounded-2xl p-6 text-white">
                   <p className="font-display font-bold text-lg mb-2">Follow Our Journey</p>
-                  <p className="text-navy-300 text-sm leading-relaxed">
+                  <p className="text-navy-300 text-sm leading-relaxed mb-4">
                     Building innovation. Creating opportunities. Transforming communities.
                   </p>
+                  <div className="flex items-center gap-3">
+                    {socialLinks.map(({ icon: Icon, href, label }) => (
+                      <a
+                        key={label}
+                        href={href}
+                        target="_blank"
+                        rel="noopener noreferrer"
+                        className="w-10 h-10 rounded-lg bg-white/10 hover:bg-primary-600 flex items-center justify-center text-white transition-colors"
+                        aria-label={label}
+                      >
+                        <Icon size={18} />
+                      </a>
+                    ))}
+                  </div>
                 </div>
               </AnimatedSection>
             </div>
