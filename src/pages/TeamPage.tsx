@@ -23,12 +23,12 @@ export default function TeamPage() {
       image: '/Tech.jpeg',
     },
     {
-      name: 'Boma Jaja',
-      role: 'Operations Management',
-      bio: 'Skilled operations manager ensuring seamless execution and impact across our businesses',
+      name: 'Ruth Archibong',
+      role: 'Operations & Strategy Lead',
+      bio: 'Operations and strategy expert focused on scaling businesses and driving operational excellence',
       email: '',
       linkedin: '#',
-      image: '/operations.jpeg',
+      image: '/brand.jpeg',
     },
     {
       name: 'Gideon Daniel',
@@ -53,6 +53,14 @@ export default function TeamPage() {
       email: '',
       linkedin: '#',
       image: '/Visual.jpeg',
+    },
+    {
+      name: 'Boma Jaja',
+      role: 'Media & Storytelling Specialist',
+      bio: 'Media specialist crafting compelling narratives and visual content to amplify our impact across Africa',
+      email: '',
+      linkedin: '#',
+      image: '/operations.jpeg',
     },
     {
       name: 'Udemeabasi James',
