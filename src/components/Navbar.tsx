@@ -41,7 +41,7 @@ export default function Navbar() {
     >
       <div className="container-section flex items-center justify-between py-3">
         <Link to="/" className={`flex items-center gap-2 text-lg font-bold transition-colors ${scrolled ? 'text-navy-900' : 'text-white'}`}>
-          <img src="/logo.jpeg" alt="Qua Industries Logo" className="h-8 w-8 object-contain" />
+          <img src="/logo_1.png" alt="Qua Industries Logo" className="h-10 w-10 object-contain drop-shadow-sm" />
           Qua Industries
         </Link>
 
