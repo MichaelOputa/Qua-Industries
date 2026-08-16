@@ -22,6 +22,22 @@ export default function TeamPage() {
       linkedin: 'https://ng.linkedin.com/in/michael-oputa-7310a3280',
       image: '/Tech.jpeg',
     },
+    {
+      name: 'Emmanuel Asuquo Orok',
+      role: 'Administrative Manager',
+      bio: 'Administrative expert ensuring smooth operations and effective management of our business processes',
+      email: '#',
+      linkedin: '#',
+      image: '/Administrative.jpg',
+    },
+    {
+      name: 'Gideon Daniel Okon',
+      role: 'Finance Manager', 
+      bio: 'Responsible for overseeing financial operations and ensuring fiscal responsibility across our ventures',
+      email: '#',
+      linkedin: '#',
+      image: '/Finance.jpg',
+    },
   ];
 
   return (

@@ -105,7 +105,7 @@ export default function AboutPage() {
             <AnimatedSection animation="slide-in-right" delay={200}>
               <div className="rounded-2xl overflow-hidden shadow-xl">
                 <img
-                  src="qua_people.jpeg"
+                  src="/team-collaboration.jpg"
                   alt="Team collaboration"
                   className="w-full h-80 md:h-96 object-cover"
                 />
